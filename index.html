@@ -3,243 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ravatsinh Sisodiya | Full-Stack Developer</title>
-  <meta name="description" content="Ravatsinh Sisodiya - Full-Stack Developer with 12+ years in Laravel, CakePHP, Livewire, Vue, Angular, AWS, and DevOps. Crafting high-quality digital solutions.">
-  <meta name="keywords" content="Ravatsinh, Ravatsinh Sisodiya, Full-Stack Developer, Laravel Expert, PHP Developer, Angular Developer, Vue.js Developer, Ionic Developer, Electron.js Developer, AWS Specialist, DevOps Engineer, CI/CD Expert">
+  <title>Ravatsinh Sisodiya | Senior Software Engineer</title>
+  <meta name="description" content="Ravatsinh Sisodiya - Senior Software Engineer specialized in backend and frontend development.">
   <meta name="author" content="Ravatsinh Sisodiya">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ravatsinh.com">
-  <meta property="og:title" content="Ravatsinh Sisodiya - Full-Stack Developer">
-  <meta property="og:description" content="Explore the portfolio of Ravatsinh Sisodiya, a Full-Stack Developer specializing in Laravel, Angular, Vue, AWS, and cutting-edge digital solutions.">
-  <meta property="og:url" content="https://ravatsinh.com">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://gravatar.com/userimage/15498128/92cbcd01fb56e63180516f5ebdb276e3.jpeg?size=256">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ravatsinh Sisodiya - Full-Stack Developer">
-  <meta name="twitter:description" content="Creating seamless digital solutions with expertise in Laravel, Angular, Vue, and more.">
-  <meta name="twitter:image" content="https://gravatar.com/userimage/15498128/92cbcd01fb56e63180516f5ebdb276e3.jpeg?size=256">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="manifest" href="/manifest.json">
-  <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ravatsinh Sisodiya",
-      "url": "https://ravatsinh.com",
-      "image": "https://gravatar.com/userimage/15498128/92cbcd01fb56e63180516f5ebdb276e3.jpeg?size=256",
-      "jobTitle": "Full-Stack Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Freelancer"
-      },
-      "sameAs": [
-        "https://github.com/ravatsinh",
-        "https://www.linkedin.com/in/ravatsinh/"
-      ]
-    }
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
-    body {
-      font-family: 'Roboto', 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #121212;
-      color: #f5f5f5;
-      overflow-x: hidden;
-    }
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #16213e, #0f3460);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 4rem;
-      color: #00d4ff;
-      text-shadow: 0 5px 15px rgba(0, 212, 255, 0.7);
-      margin-bottom: .5rem;
-      animation: zoomIn 1.5s ease;
-    }
-    header p {
-      font-size: 1.5rem;
-      margin: 0;
-    }
-    nav {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    nav a {
-      color: #f5f5f5;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    section {
-      padding: 4rem 1rem;
-    }
-    .about {
-      background: #1a1a2e;
-    }
-    .skills {
-      background: linear-gradient(135deg, #0f3460, #16213e);
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 0 auto;
-      max-width: 1200px;
-    }
-    .skill-card {
-      background: #1a1a2e;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform .3s, box-shadow .3s;
-    }
-    .skill-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-    }
-    .projects {
-      background: #121212;
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .project {
-      background: #1a1a2e;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform .3s;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-    }
-    .contact {
-      background: #0f3460;
-      text-align: center;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #000;
-      color: #aaa;
-    }
-    @keyframes zoomIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+    body { font-family: 'Inter', sans-serif; }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
   </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQWG7RJ34E"></script>
-  <script>
-  function gtag(){dataLayer.push(arguments)}
-  window.dataLayer=window.dataLayer||[];
-  gtag('js',new Date());
-  gtag('config','G-NQWG7RJ34E');
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-<body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <header>
-    <h1 id="typed"></h1>
-    <p>Crafting seamless digital experiences with precision and expertise.</p>
-  </header>
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I'm Ravatsinh Sisodiya, a passionate Full-Stack Developer with over a decade of experience building scalable web and mobile applications. My focus is on Laravel, Angular, Vue, and AWS powered solutions.</p>
-  </section>
-  <section id="skills" class="skills">
-    <h2>My Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Backend Development</h3>
-        <p>Mastery in PHP frameworks like Laravel, CodeIgniter, CakePHP, and Livewire.</p>
+<body class="bg-gradient-to-tr from-slate-900 via-indigo-900 to-slate-800 text-white min-h-screen">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // Hero section with animated tagline
+    const Hero = () => {
+      React.useEffect(() => {
+        new Typed('#tagline', {
+          strings: ['Crafting reliable solutions', 'Building with passion'],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true
+        });
+      }, []);
+      return (
+        <section className="h-screen flex flex-col justify-center items-center text-center space-y-4" id="hero">
+          <h1 className="text-4xl md:text-6xl font-bold">Ravatsinh Sisodiya</h1>
+          <p className="text-xl md:text-2xl font-semibold text-indigo-300">Senior Software Engineer</p>
+          <span id="tagline" className="text-lg md:text-xl"></span>
+        </section>
+      );
+    };
+
+    // About Me section
+    const About = () => (
+      <section id="about" className="py-16 px-6 md:px-16 bg-slate-800" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+        <p className="text-lg leading-relaxed max-w-3xl">
+          Hello! I'm Ravatsinh, a developer who loves solving complex problems and mentoring teams. I enjoy turning ideas into
+          real-world applications and believe in clean, maintainable code.
+        </p>
+      </section>
+    );
+
+    // Single skill card
+    const SkillCard = ({ title, children }) => (
+      <div className="glass rounded-lg p-6 shadow-lg hover:shadow-xl transition" data-aos="zoom-in">
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        {children}
       </div>
-      <div class="skill-card">
-        <h3>Frontend Development</h3>
-        <p>Creating dynamic user interfaces with Angular, Vue, Bootstrap, and jQuery.</p>
-      </div>
-      <div class="skill-card">
-        <h3>Mobile Development</h3>
-        <p>Cross-platform app development expertise with Ionic.</p>
-      </div>
-      <div class="skill-card">
-        <h3>Desktop Applications</h3>
-        <p>Innovative desktop apps using Electron.js.</p>
-      </div>
-      <div class="skill-card">
-        <h3>Cloud & Servers</h3>
-        <p>Hands-on experience with AWS, Cloudflare, Linux servers, cPanel, and WHM.</p>
-      </div>
-      <div class="skill-card">
-        <h3>DevOps</h3>
-        <p>Streamlined CI/CD with TeamCity and other automation tools.</p>
-      </div>
-      <div class="skill-card">
-        <h3>API Integrations</h3>
-        <p>Seamless API design and integration expertise for various platforms.</p>
-      </div>
-      <div class="skill-card">
-        <h3>JavaScript & Node.js</h3>
-        <p>Proficiency in Node.js and advanced JavaScript applications.</p>
-      </div>
-    </div>
-  </section>
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project">
-        <h3>E-commerce Platform</h3>
-        <p>Scalable Laravel and Vue based solution for online retailers.</p>
-      </div>
-      <div class="project">
-        <h3>Real-time Dashboard</h3>
-        <p>Interactive analytics dashboard built with Angular and Node.js.</p>
-      </div>
-      <div class="project">
-        <h3>Mobile Booking App</h3>
-        <p>Ionic application enabling seamless bookings and payments.</p>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="contact">
-    <h2>Get In Touch</h2>
-    <p><a href="mailto:ravatsinh@gmail.com">ravatsinh@gmail.com</a></p>
-    <p>
-      <a href="https://github.com/ravatsinh">GitHub</a> |
-      <a href="https://www.linkedin.com/in/ravatsinh/">LinkedIn</a>
-    </p>
-  </section>
-  <footer>
-    &copy; <span id="year"></span> Ravatsinh Sisodiya
-  </footer>
-  <script>
-    new Typed('#typed', {
-      strings: ['Ravatsinh Sisodiya', 'Full-Stack Developer', 'DevOps Engineer'],
-      typeSpeed: 60,
-      backSpeed: 40,
-      loop: true
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
+    );
+
+    // Skills section with categories
+    const Skills = () => (
+      <section id="skills" className="py-16 px-6 md:px-16" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold mb-8 text-center">Skills</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <SkillCard title="Backend">
+            <ul className="space-y-2">
+              <li><i className="fa-brands fa-laravel text-red-500 mr-2"></i>Laravel</li>
+              <li><i className="fa-brands fa-php text-indigo-400 mr-2"></i>PHP</li>
+              <li><i className="fa-brands fa-node-js text-green-500 mr-2"></i>Node.js</li>
+            </ul>
+          </SkillCard>
+          <SkillCard title="Frontend">
+            <ul className="space-y-2">
+              <li><i className="fa-brands fa-react text-cyan-400 mr-2"></i>React</li>
+              <li><i className="fa-brands fa-angular text-red-600 mr-2"></i>Angular</li>
+              <li><i className="fa-brands fa-vuejs text-green-400 mr-2"></i>Vue</li>
+            </ul>
+          </SkillCard>
+          <SkillCard title="DevOps">
+            <ul className="space-y-2">
+              <li><i className="fa-brands fa-aws text-orange-400 mr-2"></i>AWS</li>
+              <li><i className="fa-solid fa-server text-yellow-300 mr-2"></i>Linux Servers</li>
+              <li><i className="fa-solid fa-gear text-blue-300 mr-2"></i>CI/CD</li>
+            </ul>
+          </SkillCard>
+          <SkillCard title="AI/ML">
+            <ul className="space-y-2">
+              <li><i className="fa-solid fa-brain text-pink-400 mr-2"></i>Python</li>
+              <li><i className="fa-solid fa-robot text-purple-400 mr-2"></i>TensorFlow</li>
+              <li><i className="fa-solid fa-magnifying-glass-chart text-indigo-300 mr-2"></i>Data Analysis</li>
+            </ul>
+          </SkillCard>
+        </div>
+      </section>
+    );
+
+    // Personal facts
+    const Facts = () => (
+      <section id="facts" className="py-16 px-6 md:px-16 bg-slate-800" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold mb-4">Personal Facts</h2>
+        <ul className="list-disc ml-5 space-y-2">
+          <li>Weekend cyclist and coffee enthusiast.</li>
+          <li>Love experimenting with new tech and mentoring juniors.</li>
+          <li>Enjoy creating electronic music in my spare time.</li>
+        </ul>
+      </section>
+    );
+
+    // Contact section
+    const Contact = () => (
+      <section id="contact" className="py-16 px-6 md:px-16 text-center" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold mb-4">Get in Touch</h2>
+        <form className="max-w-md mx-auto space-y-4">
+          <input type="text" placeholder="Name" className="w-full p-3 rounded bg-slate-700 focus:outline-none" />
+          <input type="email" placeholder="Email" className="w-full p-3 rounded bg-slate-700 focus:outline-none" />
+          <textarea placeholder="Message" className="w-full p-3 rounded bg-slate-700 focus:outline-none" rows="4"></textarea>
+          <button type="submit" className="w-full py-3 rounded bg-indigo-600 hover:bg-indigo-700 transition font-semibold">Send Message</button>
+        </form>
+      </section>
+    );
+
+    const Footer = () => (
+      <footer className="py-6 text-center text-sm bg-slate-900">
+        &copy; {new Date().getFullYear()} Ravatsinh Sisodiya
+      </footer>
+    );
+
+    const App = () => {
+      React.useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+      }, []);
+      return (
+        <div>
+          <Hero />
+          <About />
+          <Skills />
+          <Facts />
+          <Contact />
+          <Footer />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
 </html>
