@@ -19,27 +19,43 @@
     body { font-family: 'Inter', sans-serif; }
     .glass {
       background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
     }
   </style>
 </head>
-<body class="bg-gradient-to-tr from-slate-900 via-indigo-900 to-slate-800 text-white min-h-screen">
+<body class="bg-gradient-to-tr from-slate-900 via-purple-900 to-slate-800 text-white min-h-screen">
   <div id="root"></div>
 
   <script type="text/babel">
+    const Navbar = () => (
+      <nav className="fixed top-0 w-full backdrop-blur-sm bg-slate-900/60 z-10" data-aos="fade-down">
+        <ul className="flex justify-center space-x-8 py-4 font-semibold">
+          <li><a href="#about" className="hover:text-indigo-300">About</a></li>
+          <li><a href="#skills" className="hover:text-indigo-300">Skills</a></li>
+          <li><a href="#contact" className="hover:text-indigo-300">Contact</a></li>
+        </ul>
+      </nav>
+    );
     // Hero section with animated tagline
     const Hero = () => {
       React.useEffect(() => {
         new Typed('#tagline', {
-          strings: ['Crafting reliable solutions', 'Building with passion'],
+          strings: [
+            'Crafting reliable solutions',
+            'Building with passion',
+            'Turning ideas into code'
+          ],
           typeSpeed: 50,
           backSpeed: 30,
           loop: true
         });
       }, []);
       return (
-        <section className="h-screen flex flex-col justify-center items-center text-center space-y-4" id="hero">
-          <h1 className="text-4xl md:text-6xl font-bold">Ravatsinh Sisodiya</h1>
+        <section id="hero" className="h-screen pt-24 flex flex-col justify-center items-center text-center space-y-4">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+            Ravatsinh Sisodiya
+          </h1>
           <p className="text-xl md:text-2xl font-semibold text-indigo-300">Senior Software Engineer</p>
           <span id="tagline" className="text-lg md:text-xl"></span>
         </section>
@@ -59,45 +75,34 @@
 
     // Single skill card
     const SkillCard = ({ title, children }) => (
-      <div className="glass rounded-lg p-6 shadow-lg hover:shadow-xl transition" data-aos="zoom-in">
+      <div className="glass rounded-lg p-6 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1" data-aos="zoom-in">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         {children}
       </div>
     );
 
+    const skillsData = [
+      { title: 'Backend Development', desc: 'Mastery in PHP frameworks like Laravel, CodeIgniter, CakePHP, and Livewire.' },
+      { title: 'Frontend Development', desc: 'Creating dynamic user interfaces with Angular, Vue, Bootstrap, and jQuery.' },
+      { title: 'Mobile Development', desc: 'Cross-platform app development expertise with Ionic.' },
+      { title: 'Desktop Applications', desc: 'Innovative desktop apps using Electron.js.' },
+      { title: 'Cloud & Servers', desc: 'Hands-on experience with AWS, Cloudflare, Linux servers, cPanel, and WHM.' },
+      { title: 'DevOps', desc: 'Streamlined CI/CD with TeamCity and other automation tools.' },
+      { title: 'API Integrations', desc: 'Seamless API design and integration expertise for various platforms.' },
+      { title: 'JavaScript & Node.js', desc: 'Proficiency in Node.js and advanced JavaScript applications.' },
+      { title: 'AI/ML', desc: 'Python, TensorFlow, and data analysis for intelligent applications.' }
+    ];
+
     // Skills section with categories
     const Skills = () => (
       <section id="skills" className="py-16 px-6 md:px-16" data-aos="fade-up">
         <h2 className="text-3xl font-semibold mb-8 text-center">Skills</h2>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <SkillCard title="Backend">
-            <ul className="space-y-2">
-              <li><i className="fa-brands fa-laravel text-red-500 mr-2"></i>Laravel</li>
-              <li><i className="fa-brands fa-php text-indigo-400 mr-2"></i>PHP</li>
-              <li><i className="fa-brands fa-node-js text-green-500 mr-2"></i>Node.js</li>
-            </ul>
-          </SkillCard>
-          <SkillCard title="Frontend">
-            <ul className="space-y-2">
-              <li><i className="fa-brands fa-react text-cyan-400 mr-2"></i>React</li>
-              <li><i className="fa-brands fa-angular text-red-600 mr-2"></i>Angular</li>
-              <li><i className="fa-brands fa-vuejs text-green-400 mr-2"></i>Vue</li>
-            </ul>
-          </SkillCard>
-          <SkillCard title="DevOps">
-            <ul className="space-y-2">
-              <li><i className="fa-brands fa-aws text-orange-400 mr-2"></i>AWS</li>
-              <li><i className="fa-solid fa-server text-yellow-300 mr-2"></i>Linux Servers</li>
-              <li><i className="fa-solid fa-gear text-blue-300 mr-2"></i>CI/CD</li>
-            </ul>
-          </SkillCard>
-          <SkillCard title="AI/ML">
-            <ul className="space-y-2">
-              <li><i className="fa-solid fa-brain text-pink-400 mr-2"></i>Python</li>
-              <li><i className="fa-solid fa-robot text-purple-400 mr-2"></i>TensorFlow</li>
-              <li><i className="fa-solid fa-magnifying-glass-chart text-indigo-300 mr-2"></i>Data Analysis</li>
-            </ul>
-          </SkillCard>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {skillsData.map(s => (
+            <SkillCard key={s.title} title={s.title}>
+              <p className="leading-relaxed text-sm">{s.desc}</p>
+            </SkillCard>
+          ))}
         </div>
       </section>
     );
@@ -139,6 +144,7 @@
       }, []);
       return (
         <div>
+          <Navbar />
           <Hero />
           <About />
           <Skills />
