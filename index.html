@@ -7,6 +7,7 @@
   <meta name="description" content="Ravatsinh Sisodiya - Senior Software Engineer specialized in backend and frontend development.">
   <meta name="author" content="Ravatsinh Sisodiya">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
@@ -15,16 +16,32 @@
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Fira Code', monospace;
+      background: linear-gradient(-45deg, #161616, #1c2731, #212d44, #26415b);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .glass {
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
     }
+    .neon-text {
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00de,
+        0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
+    }
   </style>
 </head>
-<body class="bg-gradient-to-tr from-slate-900 via-purple-900 to-slate-800 text-white min-h-screen">
+<body class="text-white min-h-screen">
   <div id="root"></div>
 
   <script type="text/babel">
@@ -53,7 +70,7 @@
       }, []);
       return (
         <section id="hero" className="h-screen pt-24 flex flex-col justify-center items-center text-center space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+          <h1 className="neon-text text-4xl md:text-6xl font-bold">
             Ravatsinh Sisodiya
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-indigo-300">Senior Software Engineer</p>
@@ -74,12 +91,25 @@
     );
 
     // Single skill card
-    const SkillCard = ({ title, children }) => (
-      <div className="glass rounded-lg p-6 shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1" data-aos="zoom-in">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        {children}
-      </div>
-    );
+    const SkillCard = ({ title, children }) => {
+      const cardRef = React.useRef(null);
+      React.useEffect(() => {
+        if (cardRef.current) {
+          VanillaTilt.init(cardRef.current, {
+            max: 15,
+            speed: 400,
+            glare: true,
+            'max-glare': 0.2,
+          });
+        }
+      }, []);
+      return (
+        <div ref={cardRef} className="glass rounded-lg p-6 shadow-lg" data-aos="zoom-in">
+          <h3 className="text-xl font-semibold mb-2">{title}</h3>
+          {children}
+        </div>
+      );
+    };
 
     const skillsData = [
       { title: 'Backend Development', desc: 'Mastery in PHP frameworks like Laravel, CodeIgniter, CakePHP, and Livewire.' },
