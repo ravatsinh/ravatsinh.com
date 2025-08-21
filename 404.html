@@ -41,14 +41,10 @@
   </div>
   
   <script>
-    // Redirect to the main app for SPA routing
-    const path = window.location.pathname.replace('/portfolio-new', '');
-    const query = window.location.search;
-    const hash = window.location.hash;
-    
+    // Redirect to the main index page
     setTimeout(() => {
-      window.location.replace('/portfolio-new/' + path + query + hash);
-    }, 100);
+      window.location.replace('/');
+    }, 1000);
   </script>
 </body>
 </html>
